@@ -1,0 +1,222 @@
+/* =========================
+   RESET
+========================= */
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+/* =========================
+   BACKGROUND / MOOD
+========================= */
+body {
+  min-height: 100vh;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont;
+  color: #ecfdf5;
+  padding: 16px;
+
+  background:
+    radial-gradient(ellipse at top, rgba(16,185,129,0.35), transparent 60%),
+    radial-gradient(ellipse at bottom, rgba(234,179,8,0.25), transparent 60%),
+    linear-gradient(180deg, #0b3a2a 0%, #061c14 100%);
+}
+
+/* =========================
+   HEADER
+========================= */
+header {
+  text-align: center;
+  padding: 28px 12px 34px;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 30px;
+  font-weight: 800;
+  letter-spacing: 0.4px;
+  text-shadow:
+    0 0 20px rgba(16,185,129,0.35),
+    0 0 40px rgba(16,185,129,0.15);
+}
+
+/* =========================
+   INPUT CONTROLS
+========================= */
+.controls {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.controls input {
+  flex: 1;
+  padding: 14px 16px;
+  border-radius: 16px;
+  border: 1px solid rgba(255,255,255,0.18);
+  background: rgba(255,255,255,0.10);
+  color: #ecfdf5;
+  font-size: 15px;
+  backdrop-filter: blur(10px);
+}
+
+.controls input::placeholder {
+  color: rgba(236,253,245,0.65);
+}
+
+.controls button {
+  padding: 14px 18px;
+  border-radius: 16px;
+  border: none;
+  font-size: 15px;
+  font-weight: 800;
+  cursor: pointer;
+  color: #052e22;
+
+  background: linear-gradient(135deg, #facc15, #eab308);
+  box-shadow:
+    0 10px 24px rgba(234,179,8,0.45),
+    inset 0 1px 0 rgba(255,255,255,0.5);
+}
+
+.controls button:active {
+  transform: scale(0.97);
+}
+
+/* =========================
+   USERS GRID
+========================= */
+#users {
+  display: grid;
+  gap: 18px;
+  margin-top: 24px;
+}
+
+/* =========================
+   USER CARD (GLASS)
+========================= */
+.user-card {
+  border-radius: 22px;
+  padding: 16px 16px 18px;
+
+  background: linear-gradient(
+    180deg,
+    rgba(255,255,255,0.16),
+    rgba(255,255,255,0.05)
+  );
+
+  backdrop-filter: blur(18px);
+  box-shadow:
+    0 30px 60px rgba(0,0,0,0.55),
+    inset 0 1px 0 rgba(255,255,255,0.22);
+
+  animation: cardIn 0.35s ease-out;
+}
+
+@keyframes cardIn {
+  from {
+    transform: translateY(8px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* =========================
+   USER HEADER
+========================= */
+.user-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14px;
+}
+
+.user-header span {
+  font-size: 19px;
+  font-weight: 800;
+  text-shadow: 0 0 12px rgba(16,185,129,0.35);
+}
+
+.user-header button {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: #fca5a5;
+}
+
+.user-header button:hover {
+  color: #fecaca;
+}
+
+/* =========================
+   DRINK GRID
+========================= */
+.drinks {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: 10px;
+}
+
+/* =========================
+   DRINK ROW
+========================= */
+.drink {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+
+  padding: 10px 12px;
+  border-radius: 16px;
+
+  background: rgba(255,255,255,0.10);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.18),
+    0 6px 16px rgba(0,0,0,0.35);
+}
+
+.drink span {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+/* =========================
+   +/- BUTTONS
+========================= */
+.drink button {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: none;
+  font-size: 16px;
+  font-weight: 900;
+  cursor: pointer;
+
+  background: rgba(255,255,255,0.9);
+  color: #065f46;
+
+  box-shadow:
+    0 6px 14px rgba(0,0,0,0.35),
+    inset 0 1px 0 rgba(255,255,255,0.6);
+}
+
+.drink button:active {
+  transform: scale(0.9);
+}
+
+/* =========================
+   RESPONSIVE DESKTOP
+========================= */
+@media (min-width: 768px) {
+  body {
+    max-width: 760px;
+    margin: 0 auto;
+  }
+}
