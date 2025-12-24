@@ -7,46 +7,39 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#0b3a2a">
 
-  <!-- App meta -->
   <title>🍻 Drink Tracker</title>
   <meta name="description" content="Közös ital követő app barátoknak és családnak">
 
-  <!-- PWA manifest -->
-  <link rel="manifest" href="manifest.json">
+  <!-- ⚠️ FONTOS: relatív út -->
+  <link rel="manifest" href="./manifest.json">
 
-  <!-- Styles -->
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="./style.css">
 </head>
 <body>
 
-  <!-- HEADER -->
   <header>
     <h1>🍻 Drink Tracker</h1>
   </header>
 
-  <!-- ADD USER -->
   <section class="controls">
     <input id="newUser" placeholder="Új személy neve">
     <button id="addUserBtn">➕ Személy</button>
   </section>
 
-  <!-- ADD DRINK -->
   <section class="controls">
     <input id="newDrink" placeholder="Új ital neve">
     <button id="addDrinkBtn">➕ Ital</button>
   </section>
 
-  <!-- USERS LIST -->
   <section id="users"></section>
 
-  <!-- APP LOGIC -->
-  <script type="module" src="app.js"></script>
+  <script type="module" src="./app.js"></script>
 
-  <!-- SERVICE WORKER REGISTER -->
+  <!-- ✅ SERVICE WORKER REG -->
   <script>
     if ("serviceWorker" in navigator) {
       window.addEventListener("load", () => {
-        navigator.serviceWorker.register("sw.js");
+        navigator.serviceWorker.register("./sw.js");
       });
     }
   </script>
